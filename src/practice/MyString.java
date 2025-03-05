@@ -5,6 +5,10 @@ public class MyString {
 
     public MyString() {}
 
+    public MyString(MyString rhs) {
+        this.deepCopy(rhs);
+    }
+
     public MyString(String str) {
         string = str.getBytes();
     }
@@ -13,6 +17,11 @@ public class MyString {
         String tmp;
         tmp = String.format("%d", num);
         string = tmp.getBytes();
+    }
+
+    public void deepCopy(MyString rhs) {
+
+        this.string = rhs.string.clone();
     }
 
     public String getString() {

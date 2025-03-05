@@ -15,6 +15,13 @@ public class Main {
         System.out.println(str1.getString());
         MyString str2 = new MyString(512);
         System.out.println(str2.getString());
+
+        System.out.println("==============");
+        MyString src = new MyString("Hello");
+        MyString dst = new MyString(src);
+
+        src.setString("World");
+        System.out.println(dst.getString());
     }
 
 }
