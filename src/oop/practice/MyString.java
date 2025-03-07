@@ -1,46 +1,26 @@
-package staticMethod;
+package oop.practice;
 
 public class MyString {
-    private static int count;
-
     private byte[] string;
 
-    private MyString() {}
+    public MyString() {}
 
     public MyString(MyString rhs) {
         this.deepCopy(rhs);
     }
 
-    private MyString(String str) {
+    public MyString(String str) {
         string = str.getBytes();
     }
 
-    private MyString(int num) {
+    public MyString(int num) {
         String tmp;
         tmp = String.format("%d", num);
         string = tmp.getBytes();
     }
 
-    public static MyString newString(int param) {
-        count++;
-        return new MyString(param);
-    }
-
-    public static MyString newString(String string) {
-        count++;
-        if (string == null || string.length() <= 0) {
-            return new MyString("(null)");
-        }
-        return new MyString(string);
-    }
-
-    public static int getCount() {
-        return count;
-    }
-
-
-
     public void deepCopy(MyString rhs) {
+
         this.string = rhs.string.clone();
     }
 

@@ -1,5 +1,6 @@
-package staticMethod;
+package oop.staticMethod;
 
+import oop.MyString;
 
 public class Main {
     public static void main(String[] args) {

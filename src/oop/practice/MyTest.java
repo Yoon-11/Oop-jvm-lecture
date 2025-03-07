@@ -1,4 +1,4 @@
-package practice;
+package oop.practice;
 
 public class MyTest {
     private int data;

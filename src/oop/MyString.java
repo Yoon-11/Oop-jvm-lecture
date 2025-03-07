@@ -1,26 +1,46 @@
-package practice;
+package oop;
 
 public class MyString {
+    private static int count;
+
     private byte[] string;
 
-    public MyString() {}
+    private MyString() {}
 
     public MyString(MyString rhs) {
         this.deepCopy(rhs);
     }
 
-    public MyString(String str) {
+    private MyString(String str) {
         string = str.getBytes();
     }
 
-    public MyString(int num) {
+    private MyString(int num) {
         String tmp;
         tmp = String.format("%d", num);
         string = tmp.getBytes();
     }
 
-    public void deepCopy(MyString rhs) {
+    public static MyString newString(int param) {
+        count++;
+        return new MyString(param);
+    }
 
+
+    public static MyString newString(String string) {
+        count++;
+        if (string == null || string.length() <= 0) {
+            return new MyString("(null)");
+        }
+        return new MyString(string);
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+
+    public void deepCopy(MyString rhs) {
         this.string = rhs.string.clone();
     }
 
@@ -33,6 +53,13 @@ public class MyString {
 
     public void setString(String param) {
         string = param.getBytes();
+
+        onSetString();
+
+    }
+
+    private void onSetString() {
+        System.out.println("하하하");
     }
 
     public int length() {
@@ -49,4 +76,6 @@ public class MyString {
         String str = new String(string);
         return param.compareTo(str);
     }
+
+
 }
