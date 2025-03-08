@@ -5,7 +5,7 @@ public class MyString {
 
     private byte[] string;
 
-    private MyString() {}
+    protected MyString() {}
 
     public MyString(MyString rhs) {
         this.deepCopy(rhs);
@@ -20,6 +20,7 @@ public class MyString {
         tmp = String.format("%d", num);
         string = tmp.getBytes();
     }
+
 
     public static MyString newString(int param) {
         count++;
@@ -52,14 +53,14 @@ public class MyString {
     }
 
     public void setString(String param) {
-        string = param.getBytes();
+        String result = onSetString(param);
+        string = result.getBytes().clone();
 
-        onSetString();
 
     }
 
-    private void onSetString() {
-        System.out.println("하하하");
+    protected String onSetString(String param) {
+        return param;
     }
 
     public int length() {
