@@ -1,11 +1,14 @@
 package oop;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class MyString {
     private static int count;
 
     private byte[] string;
 
-    protected MyString() {}
+    public MyString() {}
 
     public MyString(MyString rhs) {
         this.deepCopy(rhs);
@@ -78,5 +81,15 @@ public class MyString {
         return param.compareTo(str);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        MyString myString = (MyString) o;
+        return Objects.deepEquals(string, myString.string);
+    }
 
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(string);
+    }
 }
