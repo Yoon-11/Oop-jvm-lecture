@@ -92,4 +92,11 @@ public class MyString {
     public int hashCode() {
         return Arrays.hashCode(string);
     }
+
+    @Override
+    public String toString() {
+        return "MyString{" +
+                "string=" + Arrays.toString(string) +
+                '}';
+    }
 }
