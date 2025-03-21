@@ -1,4 +1,4 @@
-package oop.level.level1.legacy;
+package oop.refactoring.level1.legacy;
 
 import java.util.Scanner;
 

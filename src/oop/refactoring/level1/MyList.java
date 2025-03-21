@@ -1,4 +1,4 @@
-package oop.level.level1;
+package oop.refactoring.level1;
 
 public class MyList {
     static UserData head = new UserData("Dummy", "Dummy");

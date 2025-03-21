@@ -1,8 +1,8 @@
-package oop.level.level1;
+package oop.refactoring.level2;
 
 import java.util.Scanner;
 
-import static oop.level.level1.MyList.*;
+import static oop.refactoring.level1.MyList.*;
 
 public class UserInterface {
     public void run() {

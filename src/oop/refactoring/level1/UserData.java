@@ -1,4 +1,4 @@
-package oop.level.level1;
+package oop.refactoring.level1;
 
 public class UserData {
     public UserData(String name, String phone) {
