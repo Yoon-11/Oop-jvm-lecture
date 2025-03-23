@@ -1,10 +1,18 @@
 package oop.refactoring.level2;
 
+import oop.refactoring.level2.linkedList.MyList;
+
 import java.util.Scanner;
 
-import static oop.refactoring.level1.MyList.*;
+import static oop.refactoring.level2.linkedList.MyList.*;
+
 
 public class UserInterface {
+    static MyList list;
+    UserInterface(MyList list) {
+        this.list = list;
+    }
+
     public void run() {
         int menu = 0;
         while ((menu = printUi()) != 0) {
@@ -34,7 +42,7 @@ public class UserInterface {
         System.out.println("Phone : ");
         String phone = s.nextLine();
 
-        addNewNode(name, phone);
+        list.addNewNode(new UserData(name, phone));
     }
 
     public static void searchUser() {
@@ -42,7 +50,7 @@ public class UserInterface {
         System.out.println("name : ");
         String name = s.nextLine();
 
-        UserData user = findNode(name);
+        UserData user = (UserData)list.findNode(name);
         if (user != null) {
             System.out.println("name = " + user.name);
             System.out.println("phone = " + user.phone);
